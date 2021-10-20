@@ -8,7 +8,6 @@ data class Giveaway(
     val instructions: String,
     val openGiveawayUrl: String,
     val platforms: String,
-    val publishedDate: String,
     val status: String,
     val title: String,
     val type: String,

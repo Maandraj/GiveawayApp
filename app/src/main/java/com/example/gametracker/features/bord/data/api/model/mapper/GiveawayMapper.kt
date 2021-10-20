@@ -9,7 +9,6 @@ class GiveawayMapper @Inject constructor() {
         id = res.id,
         title = res.title,
         description = res.description,
-        publishedDate = res.publishedDate,
         endDate = res.endDate,
         image = res.image,
         instructions = res.instructions,

@@ -3,8 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/GameTracker/app/src/main/res/layout/activity_main.xml" value="0.34322916666666664" />
-        <entry key="..\:/GameTracker/app/src/main/res/layout/fragment_giveaway.xml" value="0.34322916666666664" />
+        <entry key="..\:/GameTracker/app/src/main/res/drawable/card_view_check.xml" value="0.1984375" />
+        <entry key="..\:/GameTracker/app/src/main/res/drawable/filter_selector.xml" value="0.2015625" />
+        <entry key="..\:/GameTracker/app/src/main/res/drawable/ic_android.xml" value="0.1984375" />
+        <entry key="..\:/GameTracker/app/src/main/res/drawable/ic_calendar.xml" value="0.2015625" />
+        <entry key="..\:/GameTracker/app/src/main/res/drawable/ic_gog_com.xml" value="0.1984375" />
+        <entry key="..\:/GameTracker/app/src/main/res/drawable/ic_origin.xml" value="0.359375" />
+        <entry key="..\:/GameTracker/app/src/main/res/drawable/ic_pc.xml" value="0.359375" />
+        <entry key="..\:/GameTracker/app/src/main/res/drawable/ic_price.xml" value="0.2015625" />
+        <entry key="..\:/GameTracker/app/src/main/res/drawable/ic_steam.xml" value="0.203125" />
+        <entry key="..\:/GameTracker/app/src/main/res/drawable/ic_windows.xml" value="0.23802083333333332" />
+        <entry key="..\:/GameTracker/app/src/main/res/drawable/ic_xbox.xml" value="0.23802083333333332" />
+        <entry key="..\:/GameTracker/app/src/main/res/drawable/icons_style.xml" value="0.23802083333333332" />
+        <entry key="..\:/GameTracker/app/src/main/res/drawable/type_selector.xml" value="0.2015625" />
+        <entry key="..\:/GameTracker/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/GameTracker/app/src/main/res/layout/filter_element.xml" value="0.75" />
+        <entry key="..\:/GameTracker/app/src/main/res/layout/fragment_giveaway.xml" value="0.33" />
+        <entry key="..\:/GameTracker/app/src/main/res/layout/giveaway_item.xml" value="0.5" />
+        <entry key="..\:/GameTracker/app/src/main/res/layout/platform_item.xml" value="0.75" />
+        <entry key="..\:/GameTracker/app/src/main/res/layout/popularity_item.xml" value="0.25" />
+        <entry key="..\:/GameTracker/app/src/main/res/layout/rare_type_item.xml" value="0.33" />
       </map>
     </option>
   </component>

@@ -2,7 +2,6 @@ package com.example.gametracker.features.bord.domain
 
 import com.example.gametracker.features.bord.data.GiveawayRepo
 import com.example.gametracker.features.bord.domain.model.Giveaway
-import com.example.gametracker.features.bord.utils.Platform
 import javax.inject.Inject
 
 class GiveawayInteractor @Inject constructor(

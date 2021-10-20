@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" >
+    <style name="CardViewStyle" parent="CardView">
+
+        <item name="android:checked">?attr/colorPrimary</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+</resources>

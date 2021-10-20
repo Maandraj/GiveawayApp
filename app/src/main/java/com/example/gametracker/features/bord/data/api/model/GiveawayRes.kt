@@ -24,8 +24,6 @@ data class GiveawayRes(
     val openGiveawayUrl: String,
     @Json(name = "platforms")
     val platforms: String,
-    @Json(name = "published_date")
-    val publishedDate: String,
     @Json(name = "status")
     val status: String,
     @Json(name = "thumbnail")
@@ -38,4 +36,6 @@ data class GiveawayRes(
     val users: Int,
     @Json(name = "worth")
     val worth: String
+    //    @Json(name = "published_date")
+//    val publishedDate: String,
 )

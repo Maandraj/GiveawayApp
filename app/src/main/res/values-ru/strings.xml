@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">GameTracker</string>
     <string name="popularity">Popularity</string>
     <string name="loot">Loot</string>
     <string name="full_game">Full game</string>

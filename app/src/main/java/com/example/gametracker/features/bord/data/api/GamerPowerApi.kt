@@ -11,7 +11,7 @@ interface GamerPowerApi {
     @GET("/giveaways")
     suspend fun getAllGiveaways(): List<GiveawayRes>
 
-    @GET("/giveaways/")
+    @GET("filter")
     suspend fun getFilterGiveaways(
         @Query("platform") platforms: String,
         @Query("type") types: String,
