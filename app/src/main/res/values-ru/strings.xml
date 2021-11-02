@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="popularity">Popularity</string>
-    <string name="loot">Loot</string>
-    <string name="full_game">Full game</string>
+    // Form giveaway
+    <string name="not_found_giveaways">Раздачи не найдены :(</string>
+    <string name="sort_text">Сортировать</string>
+    <string name="clear_text">Очистить</string>
+    <string name="full_game_text">Полная игра</string>
+    <string name="loot_text">Добыча и DLC</string>
+    <string name="beta_text">Бета</string>
+    <string name="date_text">Дата</string>
+    <string name="price_text">Цена</string>
+    <string name="popularity_text">Топ</string>
+    <string name="select_platform_text">Выберите платформу</string>
+    <string name="select_type_text">Выберите тип</string>
+    <string name="sorting_text">Сортировка</string>
+    <string name="free_text">Бесплатно</string>
+    <string name="rare">Rare</string>
+    <string name="mystical">Mystical</string>
+
 </resources>

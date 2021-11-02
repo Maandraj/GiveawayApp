@@ -18,11 +18,14 @@
         <entry key="..\:/GameTracker/app/src/main/res/drawable/type_selector.xml" value="0.2015625" />
         <entry key="..\:/GameTracker/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/GameTracker/app/src/main/res/layout/filter_element.xml" value="0.75" />
-        <entry key="..\:/GameTracker/app/src/main/res/layout/fragment_giveaway.xml" value="0.33" />
-        <entry key="..\:/GameTracker/app/src/main/res/layout/giveaway_item.xml" value="0.5" />
+        <entry key="..\:/GameTracker/app/src/main/res/layout/fragment_giveaway.xml" value="0.16" />
+        <entry key="..\:/GameTracker/app/src/main/res/layout/giveaway_item.xml" value="0.33" />
         <entry key="..\:/GameTracker/app/src/main/res/layout/platform_item.xml" value="0.75" />
         <entry key="..\:/GameTracker/app/src/main/res/layout/popularity_item.xml" value="0.25" />
         <entry key="..\:/GameTracker/app/src/main/res/layout/rare_type_item.xml" value="0.33" />
+        <entry key="..\:/GameTracker/app/src/main/res/layout/view_popularity.xml" value="0.75" />
+        <entry key="..\:/GameTracker/app/src/main/res/layout/view_progress.xml" value="0.18697916666666667" />
+        <entry key="..\:/GameTracker/app/src/main/res/layout/view_rare_type.xml" value="0.67" />
       </map>
     </option>
   </component>

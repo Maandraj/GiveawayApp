@@ -4,15 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/filter_section_top_barrier"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="btn_find, btn_cancel"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_not_found"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:text="@string/not_found_giveaways"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:alpha=".8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/filter_section_top_barrier" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/filter_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
+        android:visibility="visible"
+
         app:constraint_referenced_ids="tv_select_platform,
          tv_select_type, tv_select_sort,
          btn_cancel, btn_find, rv_platform, ll_type"
+        tools:visibility="visible" />
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/bottom_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="rv_giveaway, progress"
         tools:visibility="visible" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -21,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/start_margin_giveaway"
         android:layout_marginTop="5dp"
-        android:text="Select platform"
+        android:text="@string/select_platform_text"
         app:layout_constraintBottom_toBottomOf="@+id/tb_filter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tb_filter" />
@@ -44,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/start_margin_giveaway"
-        android:text="Select type"
+        android:text="@string/select_type_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_platform" />
 
@@ -75,8 +103,8 @@
                 android:gravity="center">
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
                     android:layout_marginStart="5dp"
                     android:src="@drawable/ic_joystick"
                     app:tint="@color/white" />
@@ -86,7 +114,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    android:text="Full game"
+                    android:text="@string/full_game_text"
                     android:textSize="12sp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -107,8 +135,8 @@
                 android:gravity="center">
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
                     android:layout_marginStart="5dp"
                     android:src="@drawable/ic_chest"
                     app:tint="@color/white" />
@@ -118,7 +146,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    android:text="Loot"
+                    android:text="@string/loot_text"
                     android:textSize="12sp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -141,8 +169,8 @@
                 android:gravity="center">
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
                     android:layout_marginStart="5dp"
                     android:src="@drawable/ic_tool"
                     app:tint="@color/white" />
@@ -152,7 +180,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    android:text="Beta"
+                    android:text="@string/beta_text"
                     android:textSize="12sp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -160,12 +188,23 @@
     </LinearLayout>
 
     <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_select_sort_gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/sorting_text"
+
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/tb_filter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tb_filter" />
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_select_sort"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/start_margin_giveaway"
         android:layout_marginTop="5dp"
-        android:text="Sorting"
+        android:text="@string/sorting_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll_type" />
 
@@ -196,8 +235,8 @@
                 android:gravity="center">
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
                     android:layout_marginStart="5dp"
                     android:src="@drawable/ic_calendar"
                     app:tint="@color/white" />
@@ -207,7 +246,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    android:text="Date"
+                    android:text="@string/date_text"
                     android:textSize="12sp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -229,8 +268,8 @@
                 android:gravity="center">
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
                     android:layout_marginStart="5dp"
                     android:src="@drawable/ic_price"
                     app:tint="@color/white" />
@@ -240,7 +279,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    android:text="Price"
+                    android:text="@string/price_text"
                     android:textSize="12sp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -263,8 +302,8 @@
                 android:gravity="center">
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
                     android:layout_marginStart="5dp"
                     android:src="@drawable/ic_star"
                     app:tint="@color/white" />
@@ -274,7 +313,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    android:text="@string/popularity"
+                    android:text="@string/popularity_text"
                     android:textSize="12sp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -289,7 +328,7 @@
         android:backgroundTint="@android:color/transparent"
         android:button="@drawable/filter_selector"
         android:gravity="center"
-        android:checked="false"
+        android:checked="true"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:textSize="14sp"
@@ -298,28 +337,27 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_find"
-        android:layout_width="80dp"
+        android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginTop="5dp"
         android:layout_marginEnd="8dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
-        android:text="Sort"
+        android:text="@string/sort_text"
         android:textSize="12sp"
         app:cornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_sort" />
+        app:layout_constraintTop_toTopOf="@+id/btn_cancel" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_cancel"
-        android:layout_width="80dp"
+        android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:backgroundTint="@color/surface"
         android:insetTop="0dp"
         android:insetBottom="0dp"
-        android:text="Cancel"
+        android:text="@string/clear_text"
         android:textSize="11sp"
         app:cornerRadius="5dp"
         app:layout_constraintEnd_toStartOf="@+id/btn_find"
@@ -332,9 +370,19 @@
         tools:listitem="@layout/giveaway_item"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:spanCount="2"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_find" />
+        app:layout_constraintTop_toBottomOf="@+id/filter_section_top_barrier" />
+    <include
+        android:id="@+id/progress"
+        layout="@layout/view_progress"
+        android:layout_width="0dp"
+        tools:visibility="gone"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filter_section_top_barrier"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

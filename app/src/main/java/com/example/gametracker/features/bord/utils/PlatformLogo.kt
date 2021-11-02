@@ -7,7 +7,7 @@ object PlatformLogo {
        return when(name){
             "Steam" -> R.drawable.ic_steam
             "Ubisoft" -> R.drawable.ic_ubisoft
-            "Pc" -> R.drawable.ic_windows
+            "Pc" -> R.drawable.ic_pc
             "Gog" -> R.drawable.ic_gog_com
             "Ps4" -> R.drawable.ic_sony_playstation
             "Ps5" -> R.drawable.ic_sony_playstation

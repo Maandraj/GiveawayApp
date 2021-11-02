@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
     android:layout_marginEnd="8dp"
@@ -10,7 +10,7 @@
     android:orientation="vertical">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/shapeableImageView"
+        android:id="@+id/iv_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
@@ -22,10 +22,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:background="#2E2E2E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shapeableImageView">
+        app:layout_constraintTop_toBottomOf="@+id/iv_image">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_title"
@@ -36,7 +37,7 @@
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ll_bonus_items"
             app:layout_constraintTop_toBottomOf="@id/ll_bonus_items"
             tools:text="@tools:sample/lorem/random" />
 
@@ -46,15 +47,15 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="1"
+            android:text="@string/free_text"
             android:textColor="@color/primary"
             android:textSize="26sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title"
-            tools:text="FREE" />
+            app:layout_constraintStart_toStartOf="@+id/tv_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/materialTextView3"
+            android:id="@+id/tv_price"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -62,6 +63,7 @@
             android:maxLines="1"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_free"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_free"
             app:layout_constraintTop_toBottomOf="@id/tv_title"
             app:layout_constraintTop_toTopOf="@+id/tv_free"
@@ -71,35 +73,38 @@
             android:id="@+id/tv_description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:ellipsize="end"
             android:maxLines="2"
             android:textSize="15sp"
-
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_free"
             app:layout_constraintTop_toBottomOf="@id/tv_free"
             tools:text="@tools:sample/lorem/random" />
 
         <LinearLayout
             android:id="@+id/ll_bonus_items"
+
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/giveaway_item_start_margin"
             android:alpha=".9"
-            android:layout_marginTop="5dp"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <include
-                android:id="@+id/rare_item"
-                layout="@layout/rare_type_item"
+
+                android:id="@+id/type_item"
+                layout="@layout/view_rarity_type"
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
-            />
+                android:layout_height="20dp" />
 
             <include
                 android:id="@+id/rare_item"
-                layout="@layout/rare_type_item"
+                layout="@layout/view_rarity_type"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:layout_marginStart="3dp" />
@@ -109,107 +114,119 @@
 
     <include
         android:id="@+id/users_item"
-        layout="@layout/popularity_item"
+        layout="@layout/view_popularity"
         android:layout_width="wrap_content"
         android:layout_height="17dp"
-        android:layout_marginTop="5dp"
         android:layout_marginStart="3dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="@+id/users_item"
+    <View
+        android:id="@+id/type_view"
+        android:layout_width="15dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/users_item"
+        app:layout_constraintStart_toEndOf="@id/users_item"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="iv_play_market,
+        iv_ios,iv_playstation,iv_windows, iv_swift, iv_xbox "
+        app:flow_horizontalAlign="end"
+        app:flow_horizontalGap="3dp"
+        app:flow_horizontalStyle="packed"
+        app:flow_verticalGap="3dp"
+        app:flow_wrapMode="chain"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/users_item">
+        app:layout_constraintTop_toTopOf="@+id/users_item" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="5dp">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_steam"
-                android:layout_width="@dimen/icons_size"
-                android:layout_height="@dimen/icons_size"
-                android:layout_marginStart="3dp"
-                android:background="@drawable/icons_style"
-                android:src="@drawable/ic_steam"
-                android:visibility="gone"
-                app:tint="#FFFFFF"
-                tools:visibility="visible" />
+    <!--        <com.google.android.material.imageview.ShapeableImageView-->
+    <!--            android:id="@+id/iv_steam"-->
+    <!--            android:layout_width="@dimen/icons_size"-->
+    <!--            android:layout_height="@dimen/icons_size"-->
+    <!--            android:layout_marginStart="3dp"-->
+    <!--            android:background="@drawable/icons_style"-->
+    <!--            android:src="@drawable/ic_steam"-->
+    <!--            android:visibility="gone"-->
+    <!--            app:tint="#FFFFFF"-->
+    <!--            tools:visibility="visible"-->
+    <!--            tools:ignore="MissingConstraints" />-->
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_ios"
-                android:layout_width="@dimen/icons_size"
-                android:layout_height="@dimen/icons_size"
-                android:layout_marginStart="3dp"
-                android:background="@drawable/icons_style"
-                android:src="@drawable/ic_apple_logo_icon_181323"
-                android:visibility="gone"
-                app:tint="#EAEAEA"
-                tools:visibility="visible" />
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_ios"
+        android:layout_width="@dimen/icons_size"
+        android:layout_height="@dimen/icons_size"
+        android:layout_marginStart="3dp"
+        android:background="@drawable/icons_style"
+        android:src="@drawable/ic_apple_logo_icon_181323"
+        android:visibility="gone"
+        app:tint="#EAEAEA"
+        tools:ignore="MissingConstraints"
+        tools:visibility="gone" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_swift"
-                android:layout_width="@dimen/icons_size"
-                android:layout_height="@dimen/icons_size"
-                android:layout_marginStart="3dp"
-                android:background="@drawable/icons_style"
-                android:src="@drawable/ic_nintendo_switch"
-                android:visibility="gone"
-                app:tint="#D50000"
-                tools:visibility="visible" />
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_swift"
+        android:layout_width="@dimen/icons_size"
+        android:layout_height="@dimen/icons_size"
+        android:layout_marginStart="3dp"
+        android:background="@drawable/icons_style"
+        android:src="@drawable/ic_nintendo_switch"
+        android:visibility="gone"
+        app:tint="#D50000"
+        tools:ignore="MissingConstraints"
+        tools:visibility="gone" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_playstation"
-                android:layout_width="@dimen/icons_size"
-                android:layout_height="@dimen/icons_size"
-                android:layout_marginStart="3dp"
-                android:background="@drawable/icons_style"
-                android:src="@drawable/ic_sony_playstation"
-                android:visibility="gone"
-                app:tint="#00B8D4"
-                tools:visibility="visible" />
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_playstation"
+        android:layout_width="@dimen/icons_size"
+        android:layout_height="@dimen/icons_size"
+        android:layout_marginStart="3dp"
+        android:background="@drawable/icons_style"
+        android:src="@drawable/ic_sony_playstation"
+        android:visibility="gone"
+        app:tint="#00B8D4"
+        tools:visibility="visible" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_xbox"
-                android:layout_width="@dimen/icons_size"
-                android:layout_height="@dimen/icons_size"
-                android:layout_marginStart="3dp"
-                android:background="@drawable/icons_style"
-                android:src="@drawable/ic_xbox"
-                android:visibility="gone"
-                app:tint="#64DD17"
-                tools:visibility="visible" />
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_xbox"
+        android:layout_width="@dimen/icons_size"
+        android:layout_height="@dimen/icons_size"
+        android:layout_marginStart="3dp"
+        android:background="@drawable/icons_style"
+        android:src="@drawable/ic_xbox"
+        android:visibility="gone"
+        app:tint="#64DD17"
+        tools:ignore="MissingConstraints"
+        tools:visibility="visible" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_windows"
-                android:layout_width="@dimen/icons_size"
-                android:layout_height="@dimen/icons_size"
-                android:layout_marginStart="3dp"
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_windows"
+        android:layout_width="@dimen/icons_size"
+        android:layout_height="@dimen/icons_size"
+        android:layout_marginStart="3dp"
 
-                android:background="@drawable/icons_style"
-                android:src="@drawable/ic_windows"
-                android:visibility="gone"
-                app:tint="#0091EA"
-                tools:visibility="visible" />
+        android:background="@drawable/icons_style"
+        android:src="@drawable/ic_windows"
+        android:visibility="gone"
+        app:tint="#0091EA"
+        tools:visibility="visible" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_android"
-                android:layout_width="@dimen/icons_size"
-                android:layout_height="@dimen/icons_size"
-                android:layout_marginStart="3dp"
-                android:layout_marginEnd="5dp"
-                android:background="@drawable/icons_style"
-                android:src="@drawable/ic_google_play"
-                android:visibility="gone"
-                app:tint="#64DD17"
-                tools:visibility="visible" />
-        </LinearLayout>
-    </HorizontalScrollView>
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_play_market"
+        android:layout_width="@dimen/icons_size"
+        android:layout_height="@dimen/icons_size"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/icons_style"
+        android:src="@drawable/ic_google_play"
+        android:visibility="gone"
+        app:tint="#64DD17"
+        tools:visibility="gone" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,20 @@
 <resources>
-    <string name="app_name">GameTracker</string>
-    <string name="popularity">Popularity</string>
-    <string name="loot">Loot</string>
-    <string name="full_game">Full game</string>
+    <string name="app_name" translatable="false">GameTracker</string>
+    // Form giveaway
+    <string name="popularity_text">Popularity</string>
+    <string name="not_found_giveaways">Giveaways not found :(</string>
+    <string name="sort_text">Sort</string>
+    <string name="clear_text">Clear</string>
+    <string name="full_game_text">Full game</string>
+    <string name="loot_text">Loot &amp; DLC</string>
+    <string name="beta_text">Beta</string>
+    <string name="date_text">Date</string>
+    <string name="price_text">Price</string>
+    <string name="select_type_text">Select type</string>
+    <string name="select_platform_text">Select platform</string>
+    <string name="sorting_text">Sorting</string>
+    <string name="free_text">FREE</string>
+    <string name="rare">Rare</string>
+    <string name="immortal">Immortal</string>
+    <string name="mystical">Mystical</string>
 </resources>

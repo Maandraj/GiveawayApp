@@ -24,7 +24,9 @@ class PlatformAdapter(
         private val binding: PlatformItemBinding by viewBinding(PlatformItemBinding::bind)
         val logo = binding.ivLogo
         val name = binding.tvName
-        val card = binding.cvFilter
+        val card = binding.cvType
+
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlatformHolder {
@@ -37,6 +39,7 @@ class PlatformAdapter(
     override fun onBindViewHolder(holder: PlatformHolder, position: Int) {
         val platform = platforms[position]
         holder.card.setOnClickListener {
+
             (it as MaterialCardView).toggle()
         }
         holder.card.setOnCheckedChangeListener { card, isChecked ->
@@ -52,20 +55,24 @@ class PlatformAdapter(
                 holder.card.requestLayout()
             }
             onClickListener.onClickItem(platformsSelected)
+            Log.i("Click", platformsSelected.size.toString())
+
         }
         if (platformsSelected.indexOf(platform) != -1) {
             holder.card.backgroundTintList =
                 holder.itemView.resources.getColorStateList(R.color.primary)
-            holder.card.requestLayout()
+            holder.card.isChecked = true
         } else if (platformsSelected.indexOf(platform) == -1) {
+            holder.card.isChecked = false
             holder.card.backgroundTintList =
                 holder.itemView.resources.getColorStateList(R.color.surface)
-            holder.card.requestLayout()
         }
+        holder.card.requestLayout()
+
         val logoId = PlatformLogo.getLogo(platform.name)
         holder.logo.setImageResource(logoId)
         holder.name.text = platform.name
-        Log.i("POS", platformsSelected.toString())
+//        Log.i("POS", platformsSelected.toString())
     }
 
 

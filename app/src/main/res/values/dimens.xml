@@ -2,4 +2,5 @@
 <resources>
     <dimen name="start_margin_giveaway">5dp</dimen>
     <dimen name="icons_size">16dp</dimen>
+    <dimen name="giveaway_item_start_margin">5dp</dimen>
 </resources>
