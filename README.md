@@ -14,6 +14,6 @@
 
 ## Изображения
 
-![Demo](https://github.com/Maandraj/WeatherAvito/blob/weather/Demo.png?raw=false)
-
+![Def](https://github.com/Maandraj/GiveawayApp/blob/master/Images/Def.png?raw=false)
+![Filter](https://github.com/Maandraj/GiveawayApp/blob/master/Images/Filter.png?raw=false)
 
