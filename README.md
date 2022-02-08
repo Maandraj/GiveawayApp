@@ -26,5 +26,5 @@
 
 ## Изображения
 
-![Def](https://github.com/Maandraj/GiveawayApp/blob/master/Images/Def.png?raw=false) ![Filter](https://github.com/Maandraj/GiveawayApp/blob/master/Images/Filter.png?raw=false)
+![Def](https://github.com/Maandraj/GiveawayApp/blob/master/Images/Def.png?raw=true) ![Filter](https://github.com/Maandraj/GiveawayApp/blob/master/Images/Filter.png?raw=false)
 
