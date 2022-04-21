@@ -20,9 +20,17 @@
 ## Технологи
 
 Для правильной работы проект использует открытые библиотекиб стандарты современного програмирования 
+- Retrofit
+- LiveData
+- NavСomponent
+- Moshi
+- Corountines
+- Glide
 - Clean architecture
 - Hilt
 - MVVM
+
+
 
 ## Изображения
 
